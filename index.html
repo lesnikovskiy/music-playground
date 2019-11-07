@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BoomBox</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div>
+        <a href="/">Home</a>
+        <a href="synth.html">Synthesizer</a>
+    </div>
+    <div>
+        <button data-playing="false" role="switch" aria-checked="false">
+            <span>Play/Stop</span>
+        </button>
+        Volume:
+        <input data-volume type="range" min="0" max="100" value="100">
+        <!-- <audio src="outfoxing.mp3" type="audio/mpeg" crossorigin="anonymous"></audio> -->
+    </div>
+    <div>
+        Filter:
+        <select data-filter-type>
+            <option value="lowpass" selected>lowpass</option>
+            <option value="highpass">highpass</option>
+            <option value="bandpass">bandpass</option>
+            <option value="lowshelf">lowshelf</option>
+            <option value="highshelf">highshelf</option>
+            <option value="peaking">peaking</option>
+            <option value="notch">notch</option>
+            <option value="allpass">allpass</option>
+        </select>
+    </div>
+    <div>
+        Frequency: <input data-filter-frequency type="range" min="0" max="1" step="0.01" value="1">
+        Quality: <input data-filter-quality type="range" min="0" max="1" step="0.01" value="1">
+    </div>
+    <!-- <script type="text/javascript" src="js/app.js"></script> -->
+    <script type="text/javascript" src="js/sound.js"></script>
+</body>
+</html>
