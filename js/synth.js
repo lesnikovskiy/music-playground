@@ -5,6 +5,10 @@ let masterGainNode = null;
 let keyboard = document.querySelector('.keyboard');
 let wavePicker = document.querySelector('select[name="waveform"]');
 let volumeControl = document.querySelector('input[name="volume"]');
+let disableRealeaseControl = document.querySelector('input[name="disable-release"');
+let filterTypeControl = document.querySelector('select[name="filterType"]');
+let filterFrequencyControl = document.querySelector('input[name="filter-frequency"]');
+let filterQualityControl = document.querySelector('input[name="filter-quality"]');
 
 let noteFreq = null;
 let customWaveform = null;
@@ -85,6 +89,8 @@ function setup() {
     noteFreq = createNoteTable();
 
     volumeControl.addEventListener("change", changeVolume, false);
+    filterFrequencyControl.addEventListener("change", changeFrequency, false);
+    filterFrequencyControl.addEventListener("change", changeQuality, false);
 
     filter = audioContext.createBiquadFilter();
     masterGainNode = audioContext.createGain();
@@ -144,9 +150,9 @@ function createKey(note, octave, freq) {
 }
 
 function playTone(freq) {
-    debugger
     let osc = audioContext.createOscillator();
-    osc.connect(masterGainNode);
+    filter.type = filterTypeControl.options[filterTypeControl.selectedIndex].value;
+    osc.connect(filter);
 
     let type = wavePicker.options[wavePicker.selectedIndex].value;
 
@@ -174,6 +180,10 @@ function notePressed(event) {
 }
 
 function noteReleased(event) {
+    if (disableRealeaseControl && disableRealeaseControl.checked) {
+        return;
+    }
+
     let dataset = event.target.dataset;
 
     if (dataset && dataset["pressed"]) {
@@ -185,6 +195,21 @@ function noteReleased(event) {
 
 function changeVolume(event) {
     masterGainNode.gain.value = volumeControl.value
+}
+
+function changeFrequency(e) {
+    const minValue = 40;
+    const maxValue = audioContext.sampleRate / 2;
+    // Logarithm (base 2) to compute how many octaves fall in the range.
+    const numberOfOctaves = Math.log(maxValue / minValue) / Math.LN2;
+    // Compute a multiplier from 0 to 1 based on an exponential scale.
+    var multiplier = Math.pow(2, numberOfOctaves * (+e.target.value - 1.0));
+    filter.frequency.value = maxValue * multiplier;
+}
+
+function changeQuality(e) {
+    debugger
+    filter.Q.value = +e.target.value * 30;
 }
 
 setup();

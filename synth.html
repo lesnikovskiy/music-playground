@@ -22,14 +22,37 @@
                 </datalist>
             </div>
             <div class="right">
-                <span>Oscillator 1: </span>
-                <select name="waveform">
-                    <option value="sine">Sine</option>
-                    <option value="square">Square</option>
-                    <option value="sawtooth">Sawtooth</option>
-                    <option value="triangle">Triangle</option>
-                    <option value="custom">Custom</option>
-                </select>
+                <div>
+                    <span>Oscillator 1: </span>
+                    <select name="waveform">
+                        <option value="sine">Sine</option>
+                        <option value="square">Square</option>
+                        <option value="sawtooth">Sawtooth</option>
+                        <option value="triangle">Triangle</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <label>
+                        <input name="disable-release" type="checkbox">
+                        Disable Realease
+                    </label>
+                </div>
+                <div>
+                    <span>Filter: </span>
+                    <select name="filterType">
+                        <option value="lowpass" selected>lowpass</option>
+                        <option value="highpass">highpass</option>
+                        <option value="bandpass">bandpass</option>
+                        <option value="lowshelf">lowshelf</option>
+                        <option value="highshelf">highshelf</option>
+                        <option value="peaking">peaking</option>
+                        <option value="notch">notch</option>
+                        <option value="allpass">allpass</option>
+                    </select>
+                    <span>Frequency: </span>
+                    <input name="filter-frequency" type="range" min="0" max="1" step="0.01" value="1">
+                    <span>Quality: </span>
+                    <input name="filter-quality" type="range" min="0" max="1" step="0.01" value="1">
+                </div>
             </div>
         </div>
     </div>
