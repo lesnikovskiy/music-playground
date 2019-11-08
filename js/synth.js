@@ -203,12 +203,11 @@ function changeFrequency(e) {
     // Logarithm (base 2) to compute how many octaves fall in the range.
     const numberOfOctaves = Math.log(maxValue / minValue) / Math.LN2;
     // Compute a multiplier from 0 to 1 based on an exponential scale.
-    var multiplier = Math.pow(2, numberOfOctaves * (+e.target.value - 1.0));
+    const multiplier = Math.pow(2, numberOfOctaves * (+e.target.value - 1.0));
     filter.frequency.value = maxValue * multiplier;
 }
 
 function changeQuality(e) {
-    debugger
     filter.Q.value = +e.target.value * 30;
 }
 
