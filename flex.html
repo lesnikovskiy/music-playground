@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .scrum-board {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+        }
+
+        .scrum-column {
+            padding: 10px;
+            border-right: 1px solid #333;
+        }
+
+        .colum-container {
+            display: flex;
+            flex-direction: row;
+            background: #eee;
+        }
+
+        .card {
+            background: yellow;
+            margin: 10px;
+            padding: 5px;
+            width: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="scrum-board">
+        <div class="scrum-column">
+            <h3>New Cases</h3>
+            <div class="colum-container">
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+            </div>
+        </div>
+        <div class="scrum-column">
+            <h3>Planning</h3>
+            <div class="colum-container">
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+            </div>
+        </div>
+        <div class="scrum-column">
+            <h3>Metal</h3>
+            <div class="colum-container">
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+            </div>
+        </div>
+        <div class="scrum-column">
+            <h3>Production</h3>
+            <div class="colum-container">
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+                <div class="card">
+                    <span class="case-code">ZB19-OGA-FEV</span>
+                    <span class="description">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

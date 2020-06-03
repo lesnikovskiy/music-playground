@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <link rel="stylesheet" href="css/piano.css">
+</head>
+
+<body>
+    <div class="controls">
+        <div id="volume">
+            Master Volume:
+            <input type="range" min="0.0" max="1.0" step="0.01" value="0.5" list="volumes" name="volume">
+            <datalist id="volumes">
+                <option value="0.0" label="Mute"></option>
+                <option value="1.0" label="100%"></option>
+            </datalist>
+
+            Filter Frequency:
+            <input type="range" min="0.0" max="1.0" step="0.01" value="1.0" name="frequency">
+        </div>
+        <div id="waves">
+            <label>
+                <input type="radio" name="wave" value="sine" checked>
+                Sine
+            </label>
+            <label>
+                <input type="radio" name="wave" value="square">
+                Square
+            </label>
+            <label>
+                <input type="radio" name="wave" value="sawtooth">
+                Sawtooth
+            </label>
+            <label>
+                <input type="radio" name="wave" value="triangle">
+                Triangle
+            </label>
+        </div>
+    </div>
+    <div class="keyboard-container">
+        <ul id="keyboard-set" class="set">
+            <li class="white c" data-frequency="130.81"></li>
+            <li class="black cs" data-frequency="138.59"></li>
+            <li class="white d" data-frequency="146.83"></li>
+            <li class="black ds" data-frequency="155.56"></li>
+            <li class="white e" data-frequency="164.81"></li>
+            <li class="white f" data-frequency="174.61"></li>
+            <li class="black fs" data-frequency="185.00"></li>
+            <li class="white g" data-frequency="196.00"></li>
+            <li class="black gs" data-frequency="207.65"></li>
+            <li class="white a" data-frequency="220.00"></li>
+            <li class="black as" data-frequency="233.08"></li>
+            <li class="white b" data-frequency="246.94"></li>
+
+            <li class="white c" data-frequency="261.63"></li>
+            <li class="black cs" data-frequency="277.18"></li>
+            <li class="white d" data-frequency="293.67"></li>
+            <li class="black ds" data-frequency="311.13"></li>
+            <li class="white e" data-frequency="329.63"></li>
+            <li class="white f" data-frequency="349.23"></li>
+            <li class="black fs" data-frequency="369.99"></li>
+            <li class="white g" data-frequency="392.00"></li>
+            <li class="black gs" data-frequency="415.30"></li>
+            <li class="white a" data-frequency="440.00"></li>
+            <li class="black as" data-frequency="466.16"></li>
+            <li class="white b" data-frequency="493.88"></li>
+
+            <li class="white c" data-frequency="523.25"></li>
+            <li class="black cs" data-frequency="554.37"></li>
+            <li class="white d" data-frequency="587.33"></li>
+            <li class="black ds" data-frequency="622.25"></li>
+            <li class="white e" data-frequency="659.26"></li>
+            <li class="white f" data-frequency="698.46"></li>
+            <li class="black fs" data-frequency="739.99"></li>
+            <li class="white g" data-frequency="783.99"></li>
+            <li class="black gs" data-frequency="830.61"></li>
+            <li class="white a" data-frequency="880.00"></li>
+            <li class="black as" data-frequency="932.33"></li>
+            <li class="white b" data-frequency="987.77"></li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="js/piano.js"></script>
+</body>
+
+</html>
