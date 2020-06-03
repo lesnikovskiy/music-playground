@@ -12,32 +12,53 @@
     <div class="controls">
         <div id="volume">
             Master Volume:
-            <input type="range" min="0.0" max="1.0" step="0.01" value="0.5" list="volumes" name="volume">
+            <input type="range" min="0.0" max="1.0" step="0.01" value="0.1" list="volumes" name="volume">
             <datalist id="volumes">
                 <option value="0.0" label="Mute"></option>
                 <option value="1.0" label="100%"></option>
             </datalist>
-
-            Filter Frequency:
-            <input type="range" min="0.0" max="1.0" step="0.01" value="1.0" name="frequency">
+        </div>
+        <div id="biquad-filter">
+            <fieldset>
+                <legend>
+                    Biquad Filter
+                    <input id="biquad-filter-checkbox" type="checkbox">
+                </legend>
+                <span>Filter Type:</span>
+                <select name="filterType">
+                    <option value="lowpass" selected>lowpass</option>
+                    <option value="highpass">highpass</option>
+                    <option value="bandpass">bandpass</option>
+                    <option value="lowshelf">lowshelf</option>
+                    <option value="highshelf">highshelf</option>
+                    <option value="peaking">peaking</option>
+                    <option value="notch">notch</option>
+                    <option value="allpass">allpass</option>
+                </select>
+                Filter Frequency:
+                <input type="range" min="0.0" max="1.0" step="0.01" value="1.0" name="frequency">
+            </fieldset>
         </div>
         <div id="waves">
-            <label>
-                <input type="radio" name="wave" value="sine" checked>
-                Sine
-            </label>
-            <label>
-                <input type="radio" name="wave" value="square">
-                Square
-            </label>
-            <label>
-                <input type="radio" name="wave" value="sawtooth">
-                Sawtooth
-            </label>
-            <label>
-                <input type="radio" name="wave" value="triangle">
-                Triangle
-            </label>
+            <fieldset>
+                <legend>Wave Form</legend>
+                <label>
+                    <input type="radio" name="wave" value="sine" checked>
+                    Sine
+                </label>
+                <label>
+                    <input type="radio" name="wave" value="square">
+                    Square
+                </label>
+                <label>
+                    <input type="radio" name="wave" value="sawtooth">
+                    Sawtooth
+                </label>
+                <label>
+                    <input type="radio" name="wave" value="triangle">
+                    Triangle
+                </label>
+            </fieldset>
         </div>
     </div>
     <div class="keyboard-container">
